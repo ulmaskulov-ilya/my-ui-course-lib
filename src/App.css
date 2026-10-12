@@ -24,3 +24,9 @@
   font-weight: 600;
   font-size: 14px;
 }
+
+.polymorph {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}

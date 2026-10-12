@@ -1,9 +1,13 @@
 import './App.css';
 import { Button } from './components/Button';
+import { useRef } from 'react';
 
 function App() {
   const variants = ['fill', 'outline', 'text'] as const;
   const sizes = ['s', 'm', 'l'] as const;
+
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const linkRef = useRef<HTMLAnchorElement>(null);
 
   return (
       <div className="app">
@@ -26,6 +30,28 @@ function App() {
                 </div>
             ))
         )}
+
+        <div className="polymorph">
+          <Button 
+            ref={buttonRef}
+            variant="fill" 
+            size="m"
+            onClick={() => console.log('Button clicked')}
+          >
+            Обычная кнопка
+          </Button>
+
+          <Button 
+            ref={linkRef}
+            as="a"
+            href="https://example.com"
+            target="_blank"
+            variant="outline"
+            size="m"
+          >
+            Ссылка-кнопка
+          </Button>
+        </div>
       </div>
   );
 }
