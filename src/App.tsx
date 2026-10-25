@@ -1,6 +1,8 @@
 import './App.css';
 import { Button } from './components/Button';
 import { useRef } from 'react';
+import {defaultThemeClass} from "./theme/theme.css.ts";
+import {ThemeContext} from "./theme/ThemeContext.tsx";
 
 function App() {
   const variants = ['fill', 'outline', 'text'] as const;
@@ -10,7 +12,7 @@ function App() {
   const linkRef = useRef<HTMLAnchorElement>(null);
 
   return (
-      <div className="app">
+      <div className={`app ${defaultThemeClass}`}>
         <div className="header">
           <span>Variant / Size</span>
           <span>Default</span>
@@ -52,6 +54,13 @@ function App() {
             Ссылка-кнопка
           </Button>
         </div>
+        <ThemeContext tokens={{
+          buttonFillBg: 'green',
+          buttonFillBgHover: 'darkgreen',
+          buttonFillBgActive: 'lightgreen',
+        }}>
+          <Button>Кастомная кнопочка</Button>
+        </ThemeContext>
       </div>
   );
 }

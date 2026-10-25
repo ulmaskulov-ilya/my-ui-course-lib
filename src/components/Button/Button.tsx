@@ -1,6 +1,6 @@
 ﻿import type {ElementType} from 'react';
 import type { ButtonProps } from "./ButtonProps.ts";
-import styles from './Button.module.css';
+import * as styles from "./Button.css.ts";
 
 export const Button = (props: ButtonProps) => {
   const {
@@ -17,8 +17,8 @@ export const Button = (props: ButtonProps) => {
   
   const customClassName = [
     styles.button,
-    styles[variant],
-    styles[size],
+    styles.variant[variant],
+    styles.size[size],
     className
   ]
     .filter(Boolean)
