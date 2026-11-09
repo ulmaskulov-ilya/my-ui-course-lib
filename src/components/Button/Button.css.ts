@@ -8,7 +8,7 @@ export const button = style({
   gap: vars.buttonGap,
   border: "none",
   borderRadius: vars.buttonBorderRadius,
-  fontFamily: 'Inter, sans-serif',
+  fontFamily: vars.fontFamily,
   fontStyle: 'normal',
   fontWeight: 600,
   letterSpacing: '-0.1px',
@@ -39,6 +39,45 @@ export const size = styleVariants({
     padding: vars.buttonLargePadding,
     fontSize: vars.buttonLargeFontSize,
   }
+})
+
+export const icon = style({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flex: "none",
+  width: vars.buttonIconSize,
+  height: vars.buttonIconSize,
+})
+
+export const withIconStart = styleVariants({
+  s: {
+    paddingInlineStart: vars.buttonIconPaddingInlineStartS,
+    paddingInlineEnd: vars.buttonIconPaddingInlineEndS,
+  },
+  m: {
+    paddingInlineStart: vars.buttonIconPaddingInlineStartM,
+    paddingInlineEnd: vars.buttonIconPaddingInlineEndM,
+  },
+  l: {
+    paddingInlineStart: vars.buttonIconPaddingInlineStartL,
+    paddingInlineEnd: vars.buttonIconPaddingInlineEndL,
+  },
+})
+
+export const withIconEnd = styleVariants({
+  s: {
+    paddingInlineStart: vars.buttonIconPaddingInlineEndS,
+    paddingInlineEnd: vars.buttonIconPaddingInlineStartS,
+  },
+  m: {
+    paddingInlineStart: vars.buttonIconPaddingInlineEndM,
+    paddingInlineEnd: vars.buttonIconPaddingInlineStartM,
+  },
+  l: {
+    paddingInlineStart: vars.buttonIconPaddingInlineEndL,
+    paddingInlineEnd: vars.buttonIconPaddingInlineStartL,
+  },
 })
 
 export const variant = styleVariants({

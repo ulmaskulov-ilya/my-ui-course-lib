@@ -1,32 +1,129 @@
-.app {
-  padding: 24px;
+.page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.calendar-theme-scope {
+  width: 100%;
+  max-width: 960px;
+}
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.calendar-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.section {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.calendar-demo {
+  display: flex;
+  justify-content: center;
+}
+
+.value-label {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.button-table {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  color: dimgray;
 }
 
 .header,
 .row {
   display: grid;
-  grid-template-columns: 120px repeat(4, 150px);
-  gap: 16px;
+  grid-template-columns: 110px 1fr;
+  gap: 12px;
   align-items: center;
-  text-align: center;
 }
 
 .header {
+  grid-template-columns: 110px repeat(4, minmax(0, 1fr));
+  text-align: center;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .row-label {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.row-states {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  align-items: center;
+  justify-items: center;
+}
+
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.state-label {
+  display: none;
+  font-size: 11px;
+  opacity: 0.6;
 }
 
 .polymorph {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
-  margin-top: 20px;
+}
+
+.custom-demo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.custom-label {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #e5e7eb;
 }
